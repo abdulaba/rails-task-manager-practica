@@ -1,0 +1,5 @@
+<h4>Tasks</h4>
+<% @tasks.each do |task| %>
+  <input type="checkbox" disabled <%= task.completed ? "checked" : "" %>><%= link_to task.title, edit_task_path(task) %> <br>
+<% end %>
+<%= link_to "Add new task", new_task_path %>
