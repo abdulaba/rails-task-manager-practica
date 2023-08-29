@@ -1,5 +1,13 @@
-<h4>Tasks</h4>
-<% @tasks.each do |task| %>
-  <input type="checkbox" disabled <%= task.completed ? "checked" : "" %>><%= link_to task.title, task_path(task) %> <br>
-<% end %>
-<%= link_to "Add new task", new_task_path %>
+<div class="container w-25 mt-4 shadow border p-3">
+  <div class="d-flex justify-content-between">
+    <h4>Tasks</h4>
+    <%= link_to "Add", new_task_path, class:"btn btn-success btn-sm" %>
+  </div>
+  <hr>
+  <% @tasks.each do |task| %>
+    <div>
+      <input type="checkbox" disabled <%= task.completed ? "checked" : "" %>>
+      <%= link_to task.title, task_path(task), class: "text-decoration-none text-secondary" %>
+    </div>
+  <% end %>
+  </div>

@@ -1,0 +1,9 @@
+<div class="container w-25 border p-2">
+  <h4><%= task.new_record? ? "New task" : "Edit task" %></h4>
+  <%= simple_form_for task do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.submit task.new_record? ? "Create" : "Update", class: "btn btn-success"%> <%= link_to "Back to tasks", tasks_path, class: "btn btn-warning" %>
+  <% end %>
+
+</div>
