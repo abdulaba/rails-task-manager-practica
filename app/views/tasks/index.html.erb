@@ -7,7 +7,7 @@
   <% @tasks.each do |task| %>
     <div>
       <input type="checkbox" disabled <%= task.completed ? "checked" : "" %>>
-      <%= link_to task.title, task_path(task) %>
+      <%= link_to task.title, task_path(task), class: "text-decoration-none text-secondary" %>
     </div>
   <% end %>
   </div>
